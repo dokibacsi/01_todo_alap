@@ -24,6 +24,9 @@ class MegjelenitSor {
       this.#esemenyTrigger("adatTorles");
       this.sorElem.remove();
     });
+
+
+    let ujAdatEsemeny = this.#esemenyTrigger('ujAdatHozzaad');
   }
 
   #sor() {
@@ -39,7 +42,7 @@ class MegjelenitSor {
   }
   
   #esemenyTrigger(esemenynev) {
-    const esmenyem = new CustomEvent((esemenynev, { detail: this }));
+    const esmenyem = new CustomEvent((esemenynev, { detail : this.#adat }));
     window.dispatchEvent(esmenyem);
   }
 
